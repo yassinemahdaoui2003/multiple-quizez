@@ -1,8 +1,35 @@
 <!doctype html>
+<!--
+  ==========================================================================
+  © 2026 Yassine Mahdaoui (ياسين مهدوي) — All Rights Reserved.
+  --------------------------------------------------------------------------
+  PROPRIETARY AND CONFIDENTIAL — EDUCATIONAL USE ONLY
+
+  This file and all of its contents (including, without limitation, the
+  questions, explanations, lesson data, design, layout, styles and
+  scripts) are the exclusive intellectual property of the author,
+  Yassine Mahdaoui (Arfoud / Kénitra, Morocco).
+
+  RESTRICTIONS:
+  - No copying, cloning, scraping or reproduction of any part.
+  - No modification, adaptation, translation or derivative works.
+  - No redistribution, republication, hosting or sharing, in whole or
+    in part, on any medium (web, app, print, LMS, etc.).
+  - No commercial use or use in paid products / services.
+  - Viewing and use are permitted for the author's own personal,
+    non-commercial study only.
+
+  Any use outside these terms requires prior written permission from
+  the author: Yassine Mahdaoui — +212 684 508 898
+  ==========================================================================
+-->
+
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="copyright" content="© 2026 Yassine Mahdaoui — All Rights Reserved">
+<meta name="author" content="Yassine Mahdaoui">
 <title>علوم التربية · اختبار الفهم والتطبيق</title>
 <script>
 try{const saved=localStorage.getItem('education-ar-theme');document.documentElement.dataset.theme=['light','dark'].includes(saved)?saved:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch{document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
@@ -39,6 +66,15 @@ h1,h2,h3,dialog h2,.metric strong{font-family:inherit}h1{font-weight:700;line-he
 button{min-height:42px}button.small{min-height:35px}.skip{position:absolute;top:-100px;right:16px}.skip:focus{top:8px;background:var(--white);padding:8px;z-index:5}
 @media(max-width:680px){.sidebar{order:0}.main{order:1}.palette{max-height:95px}.filters{margin:12px 0}.sidebar .eyebrow{display:none}.top{gap:10px}.top-actions{gap:5px}.top-actions button,.tools summary{font-size:12px;padding:7px 9px}.top .sub{max-width:none}.source-grid{grid-template-columns:1fr}.intro{padding-top:14px}.coverage-row{flex-wrap:wrap}.coverage-row>button{max-width:none}.explanation p{font-size:15px}.choice{font-size:16px}.nav button{padding:9px 12px}}
 @media print{.tools,.skip,.confidence,.note,.hint,.choices{display:none}.source-grid{display:block}.coverage-chapter{break-inside:avoid}}
+
+/* ===== Copyright / usage terms (Yassine Mahdaoui, 2026) ===== */
+body{padding-bottom:56px}
+.copyright-bar{position:fixed;inset-inline:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 22px;background:var(--ink);color:var(--paper);font-size:13px;border-top:1px solid var(--line)}
+:root[data-theme=dark] .copyright-bar{background:#0b120e;color:#cfe0d4}
+.copyright-bar b{font-weight:700}
+.copyright-bar button{background:transparent;color:inherit;border:1px solid currentColor;border-radius:8px;padding:6px 12px;font-size:12px;min-height:34px}
+.copyright-bar button:hover{background:#ffffff22}
+@media print{.copyright-bar{display:none!important}body{padding-bottom:0}}
 </style>
 </head>
 <body>
@@ -187,6 +223,29 @@ $('introText').textContent=`${num(LESSONS.length)} نقطة تعلم في أسئ
 $('sourceGuide').innerHTML=sourceNotesHTML();renderTheme();renderSide();renderQuestion();save();
 setInterval(()=>{tick();save();},10000);window.addEventListener('beforeunload',()=>{tick();save();});document.addEventListener('visibilitychange',()=>{tick();save();});
 
+</script>
+
+<div class="copyright-bar" role="contentinfo">
+ <span><b>© 2026 ياسين مهدوي · Yassine Mahdaoui</b> — جميع الحقوق محفوظة. هذا الملف ومحتواه ملك حصري للمؤلف.</span>
+ <button id="termsButton" type="button">شروط الاستخدام والحماية</button>
+</div>
+<dialog id="termsDialog" aria-labelledby="termsTitle">
+ <button class="small close" id="closeTerms" aria-label="إغلاق">إغلاق</button>
+ <h2 id="termsTitle">حقوق الملكية وشروط الاستخدام</h2>
+ <p>هذا الملف وكل محتوياته — الأسئلة والشروح ونقاط التعلم والبيانات والتصميم والأنماط والشيفرة — ملكٌ فكري حصري للمؤلف <b>ياسين مهدوي (Yassine Mahdaoui)</b>، ومحمي بموجب قوانين الملكية الفكرية.</p>
+ <ul>
+  <li>يُمنع نسخ الملف أو أي جزء منه، أو استخراج الأسئلة أو البيانات منه بأي وسيلة تقنية.</li>
+  <li>يُمنع تعديل الملف أو اشتقاق أعمال منه أو ترجمته دون إذن كتابي مسبق.</li>
+  <li>يُمنع إعادة توزيعه أو نشره أو رفعه على أي منصة أو نظام تعليمي أو موقع إلكتروني.</li>
+  <li>يُمنع الاستعمال التجاري له، كليًا أو جزئيًا، في منتجات أو خدمات مدفوعة أو مجانية.</li>
+  <li>الاستخدام المسموح وحده هو الاستخدام الشخصي غير التجاري للمؤلف لأغراض المراجعة والدراسة.</li>
+  <li>تحميل الملف أو فتحه لا يمنح أي حق من حقوق الملكية الفكرية.</li>
+ </ul>
+ <p>أي استخدام خارج هذه الشروط يتطلب موافقة كتابية مسبقة من المؤلف:<br><b>Yassine Mahdaoui</b> — +212 684 508 898 — Arfoud, Morocco</p>
+ <p class="tiny muted">جميع الحقوق محفوظة © 2026.</p>
+</dialog>
+<script>
+(function(){const d=document.getElementById('termsDialog');document.getElementById('termsButton').addEventListener('click',()=>d.showModal());document.getElementById('closeTerms').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close();});})();
 </script>
 </body>
 </html>
